@@ -8,6 +8,9 @@
     "arch": [
         "amd64"
     ],
+    "map": [
+        "share"
+    ],
     "ports": {
         "8080/tcp": 8080
     },
