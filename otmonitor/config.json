@@ -1,6 +1,6 @@
 {
     "name": "OpenTherm Monitor",
-    "version": "4.3",
+    "version": "0.1",
     "slug": "otmonitor",
     "description": "The OpenTherm Monitor helps you configure and monitor your opentherm gateway",
     "url": "https://github.com/basschipper/hassio-addons/otmonitor",
@@ -18,5 +18,5 @@
     "boot": "auto",
     "options": {},
     "schema": {},
-    "image": "basschipper/docker-otmonitor"
+    "image": "basschipper/hassio-addon-otmonitor"
 }

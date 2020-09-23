@@ -1,11 +1,17 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.3
-FROM ${BUILD_FROM}
+# ARG BUILD_FROM=hassioaddons/base:8.0.3
+# FROM ${BUILD_FROM}
+
+FROM python:3.6
+
+RUN apt-get update \
+  && apt-get install -y wget python3-tk \
+  && rm -rf /var/lib/apt/lists/*
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH
 RUN \
     mkdir /app \
     && if [[ "${BUILD_ARCH}" = "aarch64" ]]; then ARCH="-aarch64"; fi \
@@ -17,7 +23,7 @@ RUN \
     && curl -L -s -o "/app/otmonitor" "http://otgw.tclcode.com/download/otmonitor${ARCH}" \
     && chmod a+x /app/otmonitor
 
-CMD ["/app/otmonitor", "--daemon", "-f", "/data/otmonitor.conf"]
+CMD ["/app/otmonitor", "--daemon", "-f", "/share/otmonitor.conf"]
 
 # Build arguments
 ARG BUILD_DATE
