@@ -23,7 +23,7 @@ RUN \
     && curl -L -s -o "/app/otmonitor" "http://otgw.tclcode.com/download/otmonitor${ARCH}" \
     && chmod a+x /app/otmonitor
 
-CMD ["/app/otmonitor", "--daemon", "-f", "/share/otmonitor.conf"]
+CMD ["/app/otmonitor", "--daemon", "-f", "/share/otmonitor/otmonitor.conf"]
 
 # Build arguments
 ARG BUILD_DATE
