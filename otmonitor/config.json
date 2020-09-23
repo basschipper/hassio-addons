@@ -4,8 +4,6 @@
     "slug": "otmonitor",
     "description": "The OpenTherm Monitor helps you configure and monitor your opentherm gateway",
     "url": "https://github.com/basschipper/hassio-addons/otmonitor",
-    "ingress": true,
-    "ingress_port": 1337,
     "webui": "http://[HOST]:[PORT:8080]",
     "arch": [
         "amd64"
@@ -14,10 +12,10 @@
         "share"
     ],
     "ports": {
-        "8080/tcp": null
+        "8080/tcp": 8080
     },
     "ports_description": {
-        "8080/tcp": "Web interface (Not required for Ingress)"
+        "8080/tcp": "Web interface"
     },
     "startup": "services",
     "boot": "auto",
